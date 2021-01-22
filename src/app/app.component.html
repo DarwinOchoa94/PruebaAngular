@@ -1,0 +1,19 @@
+﻿
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active">Inicio</a>
+        <a class="nav-item nav-link" routerLink="/producto" routerLinkActive="active">Productos</a>
+        <a class="nav-item nav-link " (click)="logout()">Salir</a>
+        <li><a class="navbar-right">
+            <button class="btn btn-outline-success my-2 my-sm-0" id="cart" (click)="cart()">Carrito</button>
+        </a></li>
+    </div>
+</nav>
+
+<app-cart *ngIf="openCart"></app-cart>
+
+<!-- main app container -->
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+
